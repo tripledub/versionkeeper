@@ -1,0 +1,27 @@
+<h1>Listing release_items</h1>
+
+<table>
+  <tr>
+    <th>Release</th>
+    <th>Application</th>
+    <th>Version</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @release_items.each do |release_item| %>
+  <tr>
+    <td><%= release_item.release_id %></td>
+    <td><%= release_item.application_id %></td>
+    <td><%= release_item.version %></td>
+    <td><%= link_to 'Show', release_item %></td>
+    <td><%= link_to 'Edit', edit_release_item_path(release_item) %></td>
+    <td><%= link_to 'Destroy', release_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Release item', new_release_item_path %>
